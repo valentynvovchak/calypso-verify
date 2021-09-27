@@ -1,0 +1,8 @@
+/remember/
+.idea
+venv
+*/__pycache/*
+calypso_verify/__pycache__/
+calypso_verify/migrations/__pycache__/*
+calypso/__pycache__/
+

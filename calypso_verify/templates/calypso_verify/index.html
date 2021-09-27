@@ -1,0 +1,108 @@
+<!doctype html>
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Calypso focuses on manufacturing and sypplying of live resin oil products. 100% satisfaction guarantee! We provide 3 types of oil: Indica, Sativa and Hybrid for vapes. ">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://calypsoproducts.com/">
+    <meta name="keywords" content="live resin, cannabis oil, vaping oil, THC oil">
+    <meta name="theme-color" content="#e6b635">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Calypso - medical cannabis supplier </title>
+
+    <link rel="stylesheet" href="{% static 'css/discard_styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=BenchNine:wght@300;400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/e3a0b6df06.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header__inner">
+                <a href="#" class="header_logo">
+                    <img class="header__logo" src="{{ PORTAL_URL }}media/613f6a7ee86b9e0022413aae_optimized.webp" alt="logo">
+                </a>
+
+                <div class="header__stay_on">Verify your product</div>
+
+<!--             <a href="https://calypsoproducts.com/" class="header__go_back"><span class="go_back_span">Go back to calypsoproducts.com</span></a> -->
+                <div class="header__go_back_block"><a href="https://calypsoproducts.com/" class="header__go_back"><span class="go_back_span">Go back to calypsoproducts.com</span></a></div>
+                <!-- Hidden until mobile screen -->
+                <button class="nav-toggle" id="nav-toggle" type="button">
+				    <span class="nav-toggle__item">Menu</span>
+			    </button>
+            </div>
+        </div>
+    </header>
+
+<!--    <a href="https://calypsoproducts.com/" class="header__go_back_mobile"><span class="">Go back to calypsoproducts.com</span></a>-->
+
+    <section class="section">
+        <div class="container">
+            <div class="verify" id="verify">
+                <div class="verify__input_area">
+                    {% csrf_token %}
+
+                    <form id="verify_form" action="{% url 'homepage' %}" method="GET" enctype="multipart/form-data">
+                        <label class="verify__input_label" for="verify_input">Enter serial number</label>
+                        <input type="text" id="verify_input" placeholder="ex. 163627259601538903" name="serial" value="{% if serial %}{{ serial }}{% else %}{% endif %}">
+                        <button id="verify__submit_button" type="submit">OK</button>
+                        <img class="verify__leaves" style="margin-top: 30px;" src="{{ PORTAL_URL }}media/5e4e81290cc5360021253b3e_optimized_683_e1501x127-412x28.webp" alt="leaves">
+                    </form>
+                </div>
+                <div class="verify__block">
+                    <img class="verify__img" src="{{ PORTAL_URL }}media/verified-icon-png-11.jpg" alt="shield_ok">
+                    <div class="verify__qr_block"><i class="fas fa-qrcode verify__qr"></i></div>
+                    <span class="verify__text">Verify here</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-80">
+        <div class="container">
+            <ul id="report">
+                {% comment %}
+
+                <li class="report_item">
+                    <i style="color: #4fb360" class="far fa-check-circle report_item__icon"></i>
+                    <div class="report_item__content">Оригінальний</div>
+                </li>
+                <li class="report_item">
+                    <i style="color: #fedd72" class="far fa-question-circle report_item__icon"></i>
+                    <div class="report_item__content">Попередження</div>
+                </li>
+                <li class="report_item">
+                    <i style="color: red" class="far fa-times-circle report_item__icon"></i>
+                    <div class="report_item__content">Строго не рекомендується</div>
+                </li>
+
+                {% endcomment %}
+
+            </ul>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer_content">
+                <span class="created_by">© Created by jYAMall</span>
+                <span class="reserved">All rights Reserved</span>
+            </div>
+        </div>
+    </footer>
+
+    <div style="padding-top: 100px;"></div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="{% static 'js/app.js' %}"></script>
+    <script src="{% static 'js/ajax_post.js' %}"></script>
+</body>
+</html>
