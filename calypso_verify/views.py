@@ -28,6 +28,8 @@ class IndexView(TemplateView):
     def post(self, request, *args, **kwargs):
         if request.is_ajax():
             serial = request.POST.get('serial')
+            if serial:
+                serial = str(serial).strip()
 
             qr = QR.objects.filter(serial=serial).first()
 
