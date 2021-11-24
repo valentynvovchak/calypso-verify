@@ -1,5 +1,5 @@
 This is a test project.
-The idea is in verifying products via original serial numbers being added to database through excel or csv files. 
+The idea is in scanning QR codes and verifying products via original serial numbers being added to database through excel or csv files. 
 If product is already verified we show the date it was first verified and the number of verifications.
 
 
